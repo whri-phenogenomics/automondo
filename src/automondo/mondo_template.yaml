@@ -1,0 +1,28 @@
+id: http://w3id.org/ontogpt/maxo
+name: maxo
+title: Template for Medical Action Extraction
+description: >-
+  A template for extracting relationships relevant to the
+  MAXO medical action ontology.
+license: https://creativecommons.org/publicdomain/zero/1.0/
+prefixes:
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  MONDO: http://purl.obolibrary.org/obo/MONDO_
+
+default_prefix: maxo_extract
+default_range: string
+
+imports:
+  - linkml:types
+  - core
+
+classes:
+  Disease:
+    is_a: NamedEntity
+    description: >-
+      A disposition to undergo pathological processes that exists in an organism
+      because of one or more disorders in that organism.
+    annotations:
+      annotators: sqlite:obo:mondo
+    id_prefixes:
+      - MONDO
